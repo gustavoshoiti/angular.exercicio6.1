@@ -1,0 +1,162 @@
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{title}}</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <form action="#" #form="ngForm">
+          <div class="t-box">
+            <mat-form-field appearance="outline" class="b-campus">
+              <mat-label>Nome</mat-label>
+              <input 
+                [(ngModel)]="name" 
+                #inputNome="ngModel" 
+                name="nome" 
+                type="text" 
+                required  
+                matInput
+                placeholder="Digite seu nome.."
+              >
+              <mat-error>
+                <span *ngIf="inputNome.errors?.['required']">Campo obrigatório</span>
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="b-campus">
+              <mat-label>Sobrenome</mat-label>
+              <input 
+                [(ngModel)]="lastname" 
+                name="sobrenome" 
+                #inputSobrenome="ngModel" 
+                type="text" 
+                matInput
+                required
+                placeholder="Digite seu sobrenome.."
+              >
+              <mat-error>
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="b-campus">
+              <mat-label>Username</mat-label>
+              <input 
+                [(ngModel)]="username" 
+                name="username" 
+                #inputUsername="ngModel" 
+                type="text" 
+                required 
+                matInput
+                placeholder="Digite seu username...">
+              <mat-error>Campo obrigatório</mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="t-box">
+            <mat-form-field appearance="outline" class="campus">
+              <mat-label>CPF</mat-label>
+              <input 
+                [(ngModel)]="cpf" 
+                name="cpf" 
+                #inputCPF="ngModel" 
+                type="cpf" 
+                required 
+                matInput
+                placeholder="Digite seu cpf..."
+              >
+              <mat-error>Campo obrigatório</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="campus">
+              <mat-label>Telofone</mat-label>
+              <input 
+                [(ngModel)]="phone" 
+                name="telefone" 
+                type="tel" 
+                #inputTelefone="ngModel" 
+                required 
+                matInput
+                placeholder="Digite seu Telefone..."
+              >
+              <mat-error>Campo obrigatório</mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div class="t-box">
+            <mat-form-field appearance="outline" class="campus">
+              <mat-label>Endereço</mat-label>
+              <input 
+                [(ngModel)]="adress" 
+                name="endereco" 
+                type="text" 
+                #inputEndereco="ngModel" 
+                required 
+                matInput
+                placeholder="Difite seu Endereço..."
+              >
+              <mat-error>Campo obrigatório</mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="campus">
+              <mat-label>Complemento</mat-label>
+              <input 
+                [(ngModel)]="complement" 
+                name="complemento" 
+                type="text" 
+                #inputCompleto="ngModel" 
+                matInput
+                placeholder="Ex. Fundos, Apartamento..."
+              >
+            </mat-form-field>
+          </div>
+  
+          <div class="t-box">
+            <mat-form-field appearance="outline" class="campus">
+              <mat-label>Senha</mat-label>
+              <input 
+                [(ngModel)]="password" 
+                name="senha" 
+                type="password"
+                #inputPassword="ngModel" 
+                required
+                matInput
+                placeholder="Digite sua senha"
+              >
+              <mat-error>Campo obrigatório
+                <span *ngIf="inputPassword != inputConfirm">As senhas precisam ser iguais</span>
+              </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="campus">
+              <mat-label>Confirmar senha</mat-label>
+              <input 
+                [(ngModel)]="repeat" 
+                name="confirmarsenha" 
+                type="password" 
+                #inputConfirm="ngModel" 
+                matInput
+                placeholder="Repita sua senha" 
+                required 
+              >
+              <mat-error>Campo obrigatório
+                <span *ngIf="inputPassword != inputConfirm">As senhas precisam ser iguais</span>
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div>
+            <button 
+              mat-raised-button 
+              type="submit" 
+              color="warn" 
+              class="btn"
+              [disabled]="form.invalid || confirm(inputPassword.value, inputConfirm.value)"
+              (click)="submit()"
+              >Submit</button>
+          </div>
+  
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

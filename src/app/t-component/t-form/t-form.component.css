@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: aqua;
+}
+mat-card{
+  background: rgb(156, 236, 210);
+  color: brown;
+}
+.t-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px
+}
+.b-campus{
+  width: 250px;
+}
+.campus {
+  width: 380px;
+}
+.btn {
+  width: 800px;
+}
